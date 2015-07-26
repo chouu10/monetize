@@ -1,0 +1,78 @@
+<div class="panel-body">
+    <div ng-controller="TransfertCtrl">
+        <form class="center-form panel"  method="post">
+            <div class="radio" >
+                <label>
+                    <input type="radio" name="optionsRadios1" id="banktrans" ng-name="methodeTransfert" value="banktrans"
+                           ng-model="methodeTransfert" checked>
+                    Transfert bancaire
+
+                </label>
+            </div>
+            <div ng-show="methodeTransfert=='banktrans'">
+            <input class="form-control" type="text" name="numerpaypal" id="numerpaypal" ng-model="numerpaypal"
+                  ng-model="numerpaypal" placeholder="Saisissez votre id de votre compte paypal" >
+                <input class="form-control" type="text" name="numerpaypal" id="montantpaypal" ng-model="montantpaypal"
+                       ng-model="montantpaypal" placeholder="Saisissez le montant désiré" >
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios1" id="association" ng-name="methodeTransfert" value="association"
+                           ng-model="methodeTransfert" checked>
+                    Transfert vers une association
+                </label>
+
+
+                    <div class="form-group select" ng-show="methodeTransfert=='association'">
+                        <div class="col-sm-9"><select id="associationNom" name="associationNom" ng-model="associationNom">
+                            <option value="">Sélectionnez votre association</option>
+                            <option value="croixRouge" ng-model="associationNom">Croissant Rouge</option>
+                            <option value="medecinSansFrontiere" ng-model="associationNom">Médecins sans frontières</option>
+                            <option value="unicef" ng-model="associationNom">Unicef</option>
+                            </select></div>
+                        </p><p class="hide" data-cref="67" data-ctype="=" data-cvalue="1">
+
+
+                    </div>
+                <br><br>
+<div ng-show="methodeTransfert=='association'">
+                <input class="form-control" type="text" name="numerpaypal" id="montantpaypal1" ng-model="montantpaypal"
+                       ng-model="montantpaypal" placeholder="Saisissez le montant désiré" >
+</div>
+
+            </div>
+
+
+<br>           <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios1" id="bonAchat" ng-name="methodeTransfert" value="bonAchat"
+                           ng-model="methodeTransfert" checked>
+
+                    Echange avec un bon d'achat
+
+                </label>
+
+            <div class="form-group select" ng-show="methodeTransfert=='bonAchat'">
+                <div class="col-sm-9"><select id="typeBon" name="typeBon" ng-model="typeBon">
+                    <option value="">Sélectionnez le bon que vous désirez avoir</option>
+                    <option value="type1" ng-model="typeBon">Bon d'achat type 1</option>
+                    <option value="type2" ng-model="typeBon">Bon d'achat type 2</option>
+                    <option value="type3" ng-model="typeBon">Bon d'achat type 3</option>
+                </select></div>
+                </p><p class="hide" data-cref="67" data-ctype="=" data-cvalue="1">
+            </div>
+
+
+            </div>
+
+            <br><br>
+
+
+
+            <li class="list-group-item"> <input class="btn btn-lg btn-block btn-primary" type="submit" ng-click="trans()"
+                                                value="Enregistrer" ng-disabled="infoForm.$invalid" schema="UserSchema"/></li>
+        </form>
+    </div>
+</div>
+</div>
+</div>
